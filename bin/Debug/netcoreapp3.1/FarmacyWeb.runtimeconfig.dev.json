@@ -1,0 +1,8 @@
+{
+  "runtimeOptions": {
+    "additionalProbingPaths": [
+      "C:\\Users\\AllyS\\.dotnet\\store\\|arch|\\|tfm|",
+      "C:\\Users\\AllyS\\.nuget\\packages"
+    ]
+  }
+}

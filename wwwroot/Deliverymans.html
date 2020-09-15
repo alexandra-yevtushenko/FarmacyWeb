@@ -1,0 +1,118 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Parmacy</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" type="image/png" href="img/favicon.png" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="js/Deliverymans.js" asp-append-version="true"></script>
+</head>
+<body>
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+            <div class="container">
+                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Deliverymans</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="navbar-collapse collapse d-sm-inline-flex flex-sm-row-reverse">
+                    <ul class="navbar-nav flex-grow-1">
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="index.html">Medcines</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="Drugstores.html">Drugstores</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="Deliverymans.html">Deliverymans</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link text-dark" href="Orders.html">Orders</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <main role="main" class="pb-3">
+            <h5>Add Deliveryman</h5>
+            <form action="javascript:void(0);" method="POST" onsubmit="addDeliveryman()">
+                <div class="form-row">
+
+                    <div class="col">
+                        <input class="form-control" type="text" id="add-name" placeholder="Name">
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" id="add-age" placeholder="Age">
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" id="add-telephone" placeholder="Tel">
+                    </div>
+                    <div class="col">
+                        <input class="form-control" type="text" id="add-transport" placeholder="Transport">
+                    </div>
+                    <div class="col">
+                        <input type="submit" value="Add" class="btn btn-secondary" id="subm2">
+                    </div>
+                </div>
+            </form>
+
+            <div id="editForm">
+                <h5>Edit</h5>
+                <form action="javascript:void(0);" onsubmit="updateDeliveryman()">
+                    <div class="form-row">
+                        <div class="col">
+                            <input class="form-control" type="text" id="edit-name" placeholder="Name">
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="text" id="edit-age" placeholder="Age">
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="text" id="edit-telephone" placeholder="Telephone">
+                        </div>
+                        <div class="col">
+                            <input class="form-control" type="text" id="edit-transport" placeholder="Transport">
+                        </div>
+                        <div class="col">
+                            <input type="submit" value="Save" class="btn btn-secondary" id="subm1">
+                            <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+                            <input type="hidden" id="edit-id">
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <p id="counter"></p>
+
+            <table class="table table-striped">
+                <tr>
+                    <th>Name</th>
+                    <th>Age</th>
+                    <th>Telephone</th>
+                    <th>Transport</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+                <tbody id="deliverymans"></tbody>
+            </table>
+            <script type="text/javascript">
+                getDeliverymans();
+            </script>
+        </main>
+    </div>
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2020 - Online Farmacy by Alexandra Yevtushenko and Nikita Tkach - Kyiv, Sechenova 6  +380951311729 <a asp-area="" asp-controller="Home" asp-action="Privacy"></a>
+        </div>
+    </footer>
+</body>
+</html>
