@@ -91,3 +91,6 @@ body {
 #subm2_btn {
     background: rgb(23,114,69);
 }
+#editForm {
+    display: none;
+}
